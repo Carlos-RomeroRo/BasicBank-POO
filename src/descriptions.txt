@@ -1,0 +1,39 @@
+Documentación de las Clases
+1. CuentaBancaria
+Propósito: Representa una cuenta bancaria básica con operaciones comunes.
+
+Atributos:
+
+saldo: El dinero disponible en la cuenta.
+titular: Nombre del titular de la cuenta.
+numeroCuenta: Número único que identifica la cuenta.
+Métodos:
+
+consultarSaldo(): Consulta el saldo de la cuenta.
+ingresar(double valor): Ingresa una cantidad de dinero en la cuenta.
+retirar(double valor): Retira dinero de la cuenta.
+esSaldoSuficiente(double valor): Verifica si hay saldo suficiente para el retiro.
+2. CuentaAhorro
+Propósito: Extiende a CuentaBancaria para representar una cuenta de ahorro, con limitaciones de retiro y penalización.
+
+Atributos:
+
+tasaInteres: Porcentaje de interés aplicado sobre el saldo.
+fechaRetiros: Lista de fechas de los retiros realizados.
+Métodos:
+
+retirar(double valor, LocalDate fecha): Realiza un retiro, verificando si se excede el límite de retiros mensuales (más de uno aplica una penalización).
+validarFecha(LocalDate fecha): Verifica que la fecha de retiro no sea futura.
+3. CuentaCorriente
+Propósito: Extiende a CuentaBancaria para representar una cuenta corriente con línea de crédito.
+
+Atributos:
+
+lineaCredito: Límite de crédito disponible para la cuenta (permite saldo negativo).
+Métodos:
+
+retirar(double valor): Realiza un retiro, verificando si el saldo más la línea de crédito son suficientes.
+Resumen
+CuentaBancaria gestiona saldo y operaciones básicas.
+CuentaAhorro añade restricciones de retiros mensuales y penalización.
+CuentaCorriente permite usar una línea de crédito para retiros adicionales.
